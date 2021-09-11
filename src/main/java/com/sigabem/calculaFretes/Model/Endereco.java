@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sigabem.calculaFretes.Model;
 
-/**
- *
- * @author tasso
- */public class Endereco {
+public class Endereco {
 
     private String cep;
     private String logradouro;
@@ -105,8 +97,5 @@ package com.sigabem.calculaFretes.Model;
     public String toString() {
         return "Endereco{" + "cep=" + cep + ", logradouro=" + logradouro + ", complemento=" + complemento + ", bairro=" + bairro + ", localidade=" + localidade + ", uf=" + uf + ", ibge=" + ibge + ", gia=" + gia + ", ddd=" + ddd + ", siafi=" + siafi + '}';
     }
-    
-    
 
 }
-
