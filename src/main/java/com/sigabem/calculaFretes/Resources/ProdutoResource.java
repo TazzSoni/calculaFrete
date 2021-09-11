@@ -40,19 +40,24 @@ public class ProdutoResource {
 
     @PostMapping
     public HashMap<String, Object> saveProduto(@RequestBody Produto produto) {
+        HashMap<String, Object> map = new HashMap<>();
         Produto prod = new Produto(
                 produto.getNomeDestinatario(),
                 produto.getPeso(),
                 produto.getCepOrigem(),
                 produto.getCepDestino()
         );
-        produtoRepository.save(prod);
-         HashMap<String, Object> map = new HashMap<>();
-        map.put("vlTotalFrete", prod.getVlTotalFrete());
-        map.put("dataPrevistaEntrega", prod.getDataPrevistaEntraga());
-        map.put("cepOrigem", prod.getCepOrigem());
-        map.put("cepDestino", prod.getCepDestino());
+        try {
+            produtoRepository.save(prod);
+            map.put("vlTotalFrete", prod.getVlTotalFrete());
+            map.put("dataPrevistaEntrega", prod.getDataPrevistaEntraga());
+            map.put("cepOrigem", prod.getCepOrigem());
+            map.put("cepDestino", prod.getCepDestino());
+        } catch (Exception e) {
+            map.put("Erro", e.getMessage());
+        }
         return map;
+
     }
 
 }
