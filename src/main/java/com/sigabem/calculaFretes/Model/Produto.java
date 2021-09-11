@@ -46,6 +46,7 @@ public class Produto implements Serializable {
     private String cepOrigem;
     private String cepDestino;
     private double vlTotalFrete;
+    @Column(nullable = false)
     private String dataPrevistaEntraga;
     private String dataConsulta;
 
